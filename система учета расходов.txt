@@ -1,0 +1,26 @@
+#!/bin/bash
+file="script12lab.txt"
+
+while true 
+do
+  echo "1-добавить, 2-показать , 0-выход"
+  choice=""
+  read choice
+
+  case $choice in
+  1)
+    read -p "дата:" date
+    read -p "категория:" categhory
+    read -p "сумма:" amount
+    read -p "описание:" description
+    echo "${date} ${category} ${amount} ${description}" >> "$(pwd)/$file"
+  ;;
+  2) 
+    cat "$file"
+
+  ;;
+  0)
+   break
+  ;;
+ esac
+done
